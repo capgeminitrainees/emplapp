@@ -1,0 +1,26 @@
+
+<h1>Employees</h1>
+{{outlet}}
+
+<table class="table">
+<thead>
+	<tr>
+		<th>Email</th>
+		<th>EmployeeId</th>
+		<th>Name</th>
+		<th>Salary</th>
+	</tr>
+</thead>
+
+{{#each model as |row|}}
+
+	<tr>
+		<td>{{#link-to "employee.details"}}
+		{{row.email}}
+		{{/link-to}}</td>
+		<td>{{row.index}}</td>
+		<td>{{row.name}}</td>
+		<td>{{row.salary}}</td>
+	</tr> 
+{{/each}}
+</table>
